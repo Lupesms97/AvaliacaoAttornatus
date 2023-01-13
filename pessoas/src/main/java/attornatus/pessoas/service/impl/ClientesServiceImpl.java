@@ -1,9 +1,7 @@
 package attornatus.pessoas.service.impl;
 
 import attornatus.pessoas.model.Clientes;
-import attornatus.pessoas.model.Endereco;
 import attornatus.pessoas.model.repository.ClientesRepository;
-import attornatus.pessoas.model.repository.EnderecoRepository;
 import attornatus.pessoas.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +12,6 @@ import java.util.Optional;
 public class ClientesServiceImpl implements ClienteService {
     @Autowired
     private ClientesRepository clienteRepository;
-    @Autowired
-    private EnderecoRepository enderecoRepository;
 
     @Override
     public Iterable<Clientes> buscarTodos() {

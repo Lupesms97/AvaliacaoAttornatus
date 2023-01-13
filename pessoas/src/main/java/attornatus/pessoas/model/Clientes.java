@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Clientes {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -45,5 +45,15 @@ public class Clientes {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @Override
+    public String toString() {
+        return "Clientes{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", endereco=" + endereco +
+                '}';
     }
 }
