@@ -4,7 +4,7 @@ import attornatus.pessoas.model.Clientes;
 import attornatus.pessoas.model.Endereco;
 import attornatus.pessoas.model.repository.ClientesRepository;
 import attornatus.pessoas.model.repository.EnderecoRepository;
-import attornatus.pessoas.service.impl.ClientesServiceImpl;
+import attornatus.pessoas.service.implement.ClientesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

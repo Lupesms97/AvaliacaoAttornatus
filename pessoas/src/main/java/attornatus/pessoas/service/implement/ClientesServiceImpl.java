@@ -1,4 +1,4 @@
-package attornatus.pessoas.service.impl;
+package attornatus.pessoas.service.implement;
 
 import attornatus.pessoas.model.Clientes;
 import attornatus.pessoas.model.repository.ClientesRepository;
