@@ -4,6 +4,7 @@ import attornatus.pessoas.model.Clientes;
 import attornatus.pessoas.model.Endereco;
 import attornatus.pessoas.model.repository.ClientesRepository;
 import attornatus.pessoas.model.repository.EnderecoRepository;
+import attornatus.pessoas.service.impl.ClientesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,8 @@ public class StartApp implements CommandLineRunner {
     ClientesRepository clientesRepository;
     @Autowired
     EnderecoRepository enderecoRepository;
+    @Autowired
+    ClientesServiceImpl clientesService;
 
 
     @Override
@@ -32,11 +35,13 @@ public class StartApp implements CommandLineRunner {
         cliente1.setEndereco(endereco);
 
         enderecoRepository.save(endereco);
-        clientesRepository.save(cliente1);
-
-        for(Clientes cliente:clientesRepository.findAll()) {
-            System.out.println(cliente);
-        }
+        clientesService.inserir(cliente1);
+        clientesService.buscarTodos();
+//        clientesRepository.save(cliente1);
+//
+//        for(Clientes cliente:clientesRepository.findAll()) {
+//            System.out.println(cliente);
+//        }
 
 
 
