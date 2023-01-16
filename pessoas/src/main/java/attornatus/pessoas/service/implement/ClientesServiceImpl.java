@@ -1,7 +1,9 @@
 package attornatus.pessoas.service.implement;
 
 import attornatus.pessoas.model.Clientes;
+import attornatus.pessoas.model.Endereco;
 import attornatus.pessoas.model.repository.ClientesRepository;
+import attornatus.pessoas.model.repository.EnderecoRepository;
 import attornatus.pessoas.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ import java.util.Optional;
 public class ClientesServiceImpl implements ClienteService {
     @Autowired
     private ClientesRepository clienteRepository;
+    @Autowired
+    private EnderecoRepository enderecoRepository;
 
     @Override
     public Iterable<Clientes> buscarTodos() {
@@ -49,7 +53,12 @@ public class ClientesServiceImpl implements ClienteService {
     private void salvarClienteComCep(Clientes cliente) {
         // Verificar se o Endereco do Cliente já existe (pelo CEP).
         String cep = cliente.getEndereco().getCep();
-        // Inserir Cliente, vinculando o Endereco (novo ou existente).
+        clienteRepository.save(cliente);
+    }
+    private void salvarClienteComCep(Clientes cliente, Endereco endereco) {
+        // Verificar se o Endereco do Cliente já existe (pelo CEP).
+        String cep = cliente.getEndereco().getCep();
+        enderecoRepository.save(endereco);
         clienteRepository.save(cliente);
     }
 

@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StartApp implements CommandLineRunner {
-    @Autowired
-    ClientesRepository clientesRepository;
+
     @Autowired
     EnderecoRepository enderecoRepository;
     @Autowired
@@ -37,11 +36,7 @@ public class StartApp implements CommandLineRunner {
         enderecoRepository.save(endereco);
         clientesService.inserir(cliente1);
         clientesService.buscarTodos();
-//        clientesRepository.save(cliente1);
-//
-//        for(Clientes cliente:clientesRepository.findAll()) {
-//            System.out.println(cliente);
-//        }
+
 
 
 
